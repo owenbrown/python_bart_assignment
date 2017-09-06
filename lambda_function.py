@@ -10,13 +10,3 @@ def lambda_handler(event, context):
     return dict()
 
 
-def test_lambda_handler():
-    """This may be helpful when testing your function"""
-    with open(file='sample_event.json', mode='r') as f:
-        sample_event = json.load(f)
-    with open(file='sample_response.json', mode='r') as f:
-        sample_response = json.load(f)
-
-    response = lambda_handler(event=sample_event, context=None)
-
-    assert response == sample_response
