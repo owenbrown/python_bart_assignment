@@ -3,11 +3,12 @@ import json
 from utils import get_station_name, get_direction
 
 
-def lambda_handler(event, context):
+def lambda_handler(event: dict, context) -> dict:
     """Takes in an event from Api.ai, through Api Gateway.
-    Returns a dict with keys "speech", "displayText", and "Source".
+    The return format matches that the response format
+    https://developers.google.com/actions/build/json/dialogflow-webhook-json#dialogflow-response-body
     Source is always the "BART API"    """
-    return dict()
+    pass
 
 
 def test_lambda_handler():
