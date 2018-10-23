@@ -1,9 +1,12 @@
 {
   "responseId": "c4b863dd-aafe-41ad-a115-91736b665cb9",
   "queryResult": {
-    "queryText": "GOOGLE_ASSISTANT_WELCOME",
+    "queryText": "When does the next northbound train depart Oakland city center?",
     "action": "input.welcome",
-    "parameters": {},
+    "parameters": {
+        "direction": "N",
+        "station": "twelfth street oakland city center" 
+    },
     "allRequiredParamsPresent": true,
     "fulfillmentText": "",
     "fulfillmentMessages": [],
@@ -29,7 +32,7 @@
     ],
     "intent": {
       "name": "projects/${PROJECTID}/agent/intents/8b006880-0af7-4ec9-a4c3-1cc503ea8260",
-      "displayName": "Default Welcome Intent"
+      "displayName": "Get next departing train"
     },
     "intentDetectionConfidence": 1,
     "diagnosticInfo": {},
@@ -60,7 +63,7 @@
         {
           "rawInputs": [
             {
-              "query": "Talk to my test app",
+              "query": "When does the next northbound train depart Oakland city center?",
               "inputType": "VOICE"
             }
           ],
@@ -76,7 +79,7 @@
         "userId": "ABwppHEvwoXs18xBNzumk18p5h02bhRDp_riW0kTZKYdxB6-LfP3BJRjgPjHf1xqy1lxqS2uL8Z36gT6JLXSrSCZ"
       },
       "conversation": {
-        "conversationId": "${SESSIONID}",
+        "conversationId": "12354taberc2398",
         "type": "NEW"
       },
       "availableSurfaces": [
