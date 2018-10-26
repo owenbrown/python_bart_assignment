@@ -4,8 +4,12 @@ from utils import get_station_name, get_direction
 
 
 def lambda_handler(event: dict, context) -> dict:
-    """Takes in an event from Api.ai, through Api Gateway.
-    The return format matches that the response format
+    """Takes in an event from AWS API Gateway. 
+    The event is the payload of the POST request made from DialogFlow to the our fulfillment endpoint.
+    Use the included sample_event.json, which should match this format:
+    https://developers.google.com/actions/reference/v1/dialogflow-webhook#request
+
+    The lambda function returns a dict that should match this format:
     https://developers.google.com/actions/build/json/dialogflow-webhook-json#dialogflow-response-body
     Source is always the "BART API"    """
     pass
