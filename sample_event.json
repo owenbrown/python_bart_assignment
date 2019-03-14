@@ -1,100 +1,222 @@
 {
-  "responseId": "c4b863dd-aafe-41ad-a115-91736b665cb9",
-  "queryResult": {
-    "queryText": "When does the next northbound train depart Oakland city center?",
-    "action": "input.welcome",
-    "parameters": {
-        "direction": "N",
-        "station": "twelfth street oakland city center" 
-    },
-    "allRequiredParamsPresent": true,
-    "fulfillmentText": "",
-    "fulfillmentMessages": [],
-    "outputContexts": [
-      {
-        "name": "projects/${PROJECTID}/agent/sessions/${SESSIONID}/contexts/google_assistant_welcome"
-      },
-      {
-        "name": "projects/${PROJECTID}/agent/sessions/${SESSIONID}/contexts/actions_capability_screen_output"
-      },
-      {
-        "name": "projects/${PROJECTID}/agent/sessions/${SESSIONID}/contexts/google_assistant_input_type_voice"
-      },
-      {
-        "name": "projects/${PROJECTID}/agent/sessions/${SESSIONID}/contexts/actions_capability_audio_output"
-      },
-      {
-        "name": "projects/${PROJECTID}/agent/sessions/${SESSIONID}/contexts/actions_capability_web_browser"
-      },
-      {
-        "name": "projects/${PROJECTID}/agent/sessions/${SESSIONID}/contexts/actions_capability_media_response_audio"
-      }
-    ],
-    "intent": {
-      "name": "projects/${PROJECTID}/agent/intents/8b006880-0af7-4ec9-a4c3-1cc503ea8260",
-      "displayName": "Get next departing train"
-    },
-    "intentDetectionConfidence": 1,
-    "diagnosticInfo": {},
-    "languageCode": "en-us"
-  },
-  "originalDetectIntentRequest": {
-    "source": "google",
-    "version": "2",
+    "agent_name": "Bart",
+    "is_record": true,
     "payload": {
-      "isInSandbox": true,
-      "surface": {
-        "capabilities": [
-          {
-            "name": "actions.capability.SCREEN_OUTPUT"
-          },
-          {
-            "name": "actions.capability.AUDIO_OUTPUT"
-          },
-          {
-            "name": "actions.capability.WEB_BROWSER"
-          },
-          {
-            "name": "actions.capability.MEDIA_RESPONSE_AUDIO"
-          }
-        ]
-      },
-      "inputs": [
-        {
-          "rawInputs": [
-            {
-              "query": "When does the next northbound train depart Oakland city center?",
-              "inputType": "VOICE"
-            }
-          ],
-          "intent": "actions.intent.MAIN"
-        }
-      ],
-      "user": {
-        "lastSeen": "2018-03-16T22:08:48Z",
-        "permissions": [
-          "UPDATE"
-        ],
-        "locale": "en-US",
-        "userId": "ABwppHEvwoXs18xBNzumk18p5h02bhRDp_riW0kTZKYdxB6-LfP3BJRjgPjHf1xqy1lxqS2uL8Z36gT6JLXSrSCZ"
-      },
-      "conversation": {
-        "conversationId": "12354taberc2398",
-        "type": "NEW"
-      },
-      "availableSurfaces": [
-        {
-          "capabilities": [
-            {
-              "name": "actions.capability.SCREEN_OUTPUT"
+        "responseId": "ff491dd3-c024-407b-bc78-4a47f8c0cef3",
+        "queryResult": {
+            "queryText": "next southbound train from downtown Berkeley",
+            "action": "next_train",
+            "parameters": {
+                "station": "downtown berkeley",
+                "cardinal": "S"
             },
-            {
-              "name": "actions.capability.AUDIO_OUTPUT"
+            "allRequiredParamsPresent": true,
+            "fulfillmentText": "the webhook has failed",
+            "fulfillmentMessages": [
+                {
+                    "platform": "ACTIONS_ON_GOOGLE",
+                    "simpleResponses": {
+                        "simpleResponses": [
+                            {
+                                "textToSpeech": "the webhook has failed"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "platform": "ACTIONS_ON_GOOGLE",
+                    "listSelect": {
+                        "title": "Stuff you should do",
+                        "items": [
+                            {
+                                "info": {
+                                    "key": "Or This Stuff",
+                                    "synonyms": [
+                                        "Alternatively,"
+                                    ]
+                                },
+                                "title": "This Stuff",
+                                "description": "Check it out!",
+                                "image": {}
+                            },
+                            {
+                                "info": {
+                                    "key": "Also Or This Stuff",
+                                    "synonyms": [
+                                        "Also Alternatively"
+                                    ]
+                                },
+                                "title": "Also This Stuff",
+                                "description": "Also Check it Out!",
+                                "image": {}
+                            }
+                        ]
+                    }
+                },
+                {
+                    "text": {
+                        "text": [
+                            "the webhook has failed"
+                        ]
+                    }
+                }
+            ],
+            "outputContexts": [
+                {
+                    "name": "projects/next-bart-159921/agent/environments/__aog-3/users/-/sessions/ABwppHF7xSPLY-afPI-Vk_dMZRi1RJdDF8cdH3xxKa12aukmmbcSWu1X1ZDIMnCED12HE3c_MR0BOacXlCxoiA/contexts/google_assistant_welcome",
+                    "parameters": {
+                        "station.original": "downtown Berkeley",
+                        "station": "downtown berkeley",
+                        "cardinal": "S",
+                        "cardinal.original": "southbound"
+                    }
+                },
+                {
+                    "name": "projects/next-bart-159921/agent/environments/__aog-3/users/-/sessions/ABwppHF7xSPLY-afPI-Vk_dMZRi1RJdDF8cdH3xxKa12aukmmbcSWu1X1ZDIMnCED12HE3c_MR0BOacXlCxoiA/contexts/actions_capability_screen_output",
+                    "parameters": {
+                        "station.original": "downtown Berkeley",
+                        "station": "downtown berkeley",
+                        "cardinal": "S",
+                        "cardinal.original": "southbound"
+                    }
+                },
+                {
+                    "name": "projects/next-bart-159921/agent/environments/__aog-3/users/-/sessions/ABwppHF7xSPLY-afPI-Vk_dMZRi1RJdDF8cdH3xxKa12aukmmbcSWu1X1ZDIMnCED12HE3c_MR0BOacXlCxoiA/contexts/next_train",
+                    "lifespanCount": 2,
+                    "parameters": {
+                        "station.original": "downtown Berkeley",
+                        "station": "downtown berkeley",
+                        "cardinal": "S",
+                        "cardinal.original": "southbound"
+                    }
+                },
+                {
+                    "name": "projects/next-bart-159921/agent/environments/__aog-3/users/-/sessions/ABwppHF7xSPLY-afPI-Vk_dMZRi1RJdDF8cdH3xxKa12aukmmbcSWu1X1ZDIMnCED12HE3c_MR0BOacXlCxoiA/contexts/google_assistant_input_type_voice",
+                    "parameters": {
+                        "station.original": "downtown Berkeley",
+                        "station": "downtown berkeley",
+                        "cardinal": "S",
+                        "cardinal.original": "southbound"
+                    }
+                },
+                {
+                    "name": "projects/next-bart-159921/agent/environments/__aog-3/users/-/sessions/ABwppHF7xSPLY-afPI-Vk_dMZRi1RJdDF8cdH3xxKa12aukmmbcSWu1X1ZDIMnCED12HE3c_MR0BOacXlCxoiA/contexts/actions_capability_audio_output",
+                    "parameters": {
+                        "station.original": "downtown Berkeley",
+                        "station": "downtown berkeley",
+                        "cardinal": "S",
+                        "cardinal.original": "southbound"
+                    }
+                },
+                {
+                    "name": "projects/next-bart-159921/agent/environments/__aog-3/users/-/sessions/ABwppHF7xSPLY-afPI-Vk_dMZRi1RJdDF8cdH3xxKa12aukmmbcSWu1X1ZDIMnCED12HE3c_MR0BOacXlCxoiA/contexts/actions_capability_web_browser",
+                    "parameters": {
+                        "station.original": "downtown Berkeley",
+                        "station": "downtown berkeley",
+                        "cardinal": "S",
+                        "cardinal.original": "southbound"
+                    }
+                },
+                {
+                    "name": "projects/next-bart-159921/agent/environments/__aog-3/users/-/sessions/ABwppHF7xSPLY-afPI-Vk_dMZRi1RJdDF8cdH3xxKa12aukmmbcSWu1X1ZDIMnCED12HE3c_MR0BOacXlCxoiA/contexts/actions_capability_media_response_audio",
+                    "parameters": {
+                        "station.original": "downtown Berkeley",
+                        "station": "downtown berkeley",
+                        "cardinal": "S",
+                        "cardinal.original": "southbound"
+                    }
+                },
+                {
+                    "name": "projects/next-bart-159921/agent/environments/__aog-3/users/-/sessions/ABwppHF7xSPLY-afPI-Vk_dMZRi1RJdDF8cdH3xxKa12aukmmbcSWu1X1ZDIMnCED12HE3c_MR0BOacXlCxoiA/contexts/next_train_ctxt",
+                    "lifespanCount": 2,
+                    "parameters": {
+                        "station.original": "downtown Berkeley",
+                        "station": "downtown berkeley",
+                        "cardinal": "S",
+                        "cardinal.original": "southbound"
+                    }
+                }
+            ],
+            "intent": {
+                "name": "projects/next-bart-159921/agent/intents/d9843411-dd6d-4196-aebb-f64800fb19d6",
+                "displayName": "X - Next Train"
+            },
+            "intentDetectionConfidence": 1,
+            "languageCode": "en-us"
+        },
+        "originalDetectIntentRequest": {
+            "source": "google",
+            "version": "2",
+            "payload": {
+                "surface": {
+                    "capabilities": [
+                        {
+                            "name": "actions.capability.AUDIO_OUTPUT"
+                        },
+                        {
+                            "name": "actions.capability.SCREEN_OUTPUT"
+                        },
+                        {
+                            "name": "actions.capability.MEDIA_RESPONSE_AUDIO"
+                        },
+                        {
+                            "name": "actions.capability.WEB_BROWSER"
+                        }
+                    ]
+                },
+                "inputs": [
+                    {
+                        "rawInputs": [
+                            {
+                                "query": "ask Bart helper about the next southbound train from downtown Berkeley",
+                                "inputType": "VOICE"
+                            }
+                        ],
+                        "arguments": [
+                            {
+                                "rawText": "next southbound train from downtown Berkeley",
+                                "textValue": "next southbound train from downtown Berkeley",
+                                "name": "trigger_query"
+                            },
+                            {
+                                "rawText": "southbound",
+                                "textValue": "S",
+                                "name": "cardinal"
+                            },
+                            {
+                                "rawText": "downtown berkeley",
+                                "textValue": "downtown berkeley",
+                                "name": "station"
+                            }
+                        ],
+                        "intent": "X - Next Train"
+                    }
+                ],
+                "user": {
+                    "lastSeen": "2019-02-28T02:26:44Z",
+                    "locale": "en-US",
+                    "userId": "APhe68FIYiW6fz1-3s4q5YgZymbI"
+                },
+                "conversation": {
+                    "conversationId": "ABwppHF7xSPLY-afPI-Vk_dMZRi1RJdDF8cdH3xxKa12aukmmbcSWu1X1ZDIMnCED12HE3c_MR0BOacXlCxoiA",
+                    "type": "NEW"
+                },
+                "availableSurfaces": [
+                    {
+                        "capabilities": [
+                            {
+                                "name": "actions.capability.AUDIO_OUTPUT"
+                            },
+                            {
+                                "name": "actions.capability.SCREEN_OUTPUT"
+                            },
+                            {
+                                "name": "actions.capability.WEB_BROWSER"
+                            }
+                        ]
+                    }
+                ]
             }
-          ]
-        }
-      ]
+        },
+        "session": "projects/next-bart-159921/agent/environments/__aog-3/users/-/sessions/ABwppHF7xSPLY-afPI-Vk_dMZRi1RJdDF8cdH3xxKa12aukmmbcSWu1X1ZDIMnCED12HE3c_MR0BOacXlCxoiA"
     }
-  },
-  "session": "projects/${PROJECTID}/agent/sessions/${SESSIONID}"
-}
